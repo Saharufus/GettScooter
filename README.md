@@ -1,0 +1,2 @@
+# GettScooter
+ITC hackathon project
