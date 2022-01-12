@@ -60,7 +60,9 @@ router.post("/login", async (req, res) => {
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000, // 1 day
   });
-  res.send("success!");
+  res.send({
+    token: token,
+  });
 });
 
 router.get("/users", async (req, res) => {

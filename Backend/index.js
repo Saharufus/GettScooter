@@ -11,14 +11,13 @@ const dotenv = require("dotenv");
 //Middlewares:
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
-// cors may need to become this:
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: ["http://localhost:3000"],
-//   })
-// );
+
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:3002"],
+  })
+);
 dotenv.config();
 //Routes that handle requests:
 app.use("/users", userRoutes);
