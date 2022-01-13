@@ -3,15 +3,13 @@ import { SignUpButton } from "./SignUpButton";
 import Modal from "../components/modal/Modal";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { AccountBox } from './accountBox';
+import { AccountBox } from "./accountBox";
 import { AppContext } from "../context/context";
 import { Button } from "./Button";
 
 function Navbar() {
+  const { isAuth, setIsAuth, openModal, setOpenModal } = useContext(AppContext);
 
-  const {isAuth, setIsAuth, openModal, setOpenModal} = useContext(AppContext)
-
-  
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -35,15 +33,14 @@ function Navbar() {
   const Logout = () => {
     setIsAuth(false);
     localStorage.clear();
-  }
+  };
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            GettScooter
-            <i className="fab fa-typo3" />
+            <img className="social-logo" src="/images/white_logo.png" alt="" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -68,15 +65,20 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          
-          {!isAuth 
-                ? <SignUpButton buttonStyle="btn--outline" setVisible={setOpenModal}>SIGN UP</SignUpButton>
-                : <Button onClick={Logout}>LOGOUT</Button>}
+
+          {!isAuth ? (
+            <SignUpButton buttonStyle="btn--outline" setVisible={setOpenModal}>
+              SIGN UP
+            </SignUpButton>
+          ) : (
+            <Button onClick={Logout}>LOGOUT</Button>
+          )}
         </div>
-        {openModal && 
+        {openModal && (
           <Modal visible={openModal} setVisible={setOpenModal}>
-            <AccountBox setOpenModal={setOpenModal}/>
-          </Modal>}
+            <AccountBox setOpenModal={setOpenModal} />
+          </Modal>
+        )}
       </nav>
     </>
   );

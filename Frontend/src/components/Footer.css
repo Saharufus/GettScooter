@@ -20,8 +20,8 @@
 }
 
 .footer-subscription > p {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .footer-subscription-heading {
@@ -58,7 +58,6 @@
 
 .footer-link-items {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   margin: 16px;
   text-align: left;
@@ -106,7 +105,7 @@
 
 .social-media-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 90%;
   max-width: 1000px;
@@ -120,16 +119,73 @@
   width: 240px;
 }
 
+.info-container {
+  display: flex;
+  align-items: center;
+}
+
+.card-container {
+  width: 400px;
+  height: 100px;
+  background-color: rgb(124, 124, 124);
+  border-radius: 5px;
+  color: #242424;
+  margin-right: 30px;
+  font-size: 1.2rem;
+}
+
+.card-title {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #b1b1b1;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 2px;
+}
+
+.all-pics-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-text {
+  color: #fff;
+  font-size: 1rem;
+  padding: 4px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  width: 200px;
+}
+
 .social-logo {
   color: #fff;
   justify-self: start;
-  margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  width: 70px;
+  padding: 2px;
+}
+
+.about-text {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .website-rights {
