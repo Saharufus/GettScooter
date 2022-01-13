@@ -1,6 +1,7 @@
 import pickle
 import flask
 import numpy as np
+from flask_cors import CORS
 
 # 2019-09-30 23:00:00
 
@@ -12,6 +13,7 @@ for area in area_list:
         models.append(pickle.load(file))
 
 api = flask.Flask('API')
+CORS(api)
 
 
 @api.route('/predict_scooters_west_town')
